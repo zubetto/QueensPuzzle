@@ -1,0 +1,50 @@
+Example 1:
+
+x	y	b/	b\
+
+0	5	5	5
+2	6	4	8
+4	7	-3	11
+1	0	-1	1
+5	1	-4	6
+7	2	-5	9
+
+
+FreeX = {3, 6} ; FreeY = {3, 4}
+Target y = 3 ; 
+
+x	y	b/	b\	conflicts
+
+3	3	0	6	1	
+6	3	-3	9	2
+
+So, we can deny the point (7,2) instead of trying the point (3,4):
+
+x	y	b/	b\	conflicts
+3	4	1	7	0
+6	3	-3	9	2
+----------------------------------------------------------------------------------------------
+
+
+
+
+Example 2:
+
+x	y	b/	b\
+
+0	2	2	2
+2	3	1	5
+4	4	0	8
+1	5	4	6
+3	6	3	9
+
+FreeX = {5, 6, 7} ; FreeY = {0, 1, 7}
+Target y = 7 ; 
+
+x	y	b/	b\	conflicts
+
+5	7	2	12	1
+6	7	3	13	1
+7	7	0	14	1
+
+So, we can deny the point (3,6). Not early pruning in this case, because there are no free cells with x=5.
