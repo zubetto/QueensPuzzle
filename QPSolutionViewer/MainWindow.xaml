@@ -1,0 +1,61 @@
+﻿<Window x:Class="QPSolutionViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QPSolutionViewer"
+        mc:Ignorable="d"
+        Title="QP Solution Viewer" Height="350" Width="525" MinHeight="350" MinWidth="525" 
+        Loaded="Window_Loaded">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF000714" Offset="0.823"/>
+            <GradientStop Color="#FF081C3D"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <DockPanel x:Name="RootDock" LastChildFill="True">
+        <DockPanel x:Name="TopDock" LastChildFill="True" Height="20" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="5,5,5,0">
+            <Button x:Name="bttOpen" Content="Open" Width="35" Click="bttOpen_Click"
+                    Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFB1B1B1" HorizontalAlignment="Left" VerticalContentAlignment="Center" Padding="1,-2,1,1" 
+                    Style="{DynamicResource OpenBttStyle}"/>
+            <TextBox x:Name="txtInfo" TextWrapping="NoWrap" Text="TextBox" 
+                     IsReadOnly="True" Focusable="False"
+                     Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA8A8A8" FontFamily="Consolas" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" DockPanel.Dock="Right" Margin="0" Style="{DynamicResource InfoTextBoxStyle}" HorizontalAlignment="Right"/>
+        </DockPanel>
+
+        <Grid x:Name="MainGrid" DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="221"/>
+                <ColumnDefinition Width="{Binding Parent.ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel LastChildFill="True" Margin="10,10,0,10">
+                <UniformGrid Height="25" Margin="0,0,-1,2" VerticalAlignment="Top" DockPanel.Dock="Top" Columns="4">
+                    <ToggleButton x:Name="tggBttRows" Content="Rows" Margin="0,0,1,0" Click="tggBttRows_Click"/>
+                    <ToggleButton x:Name="tggBttClms" Content="Clms" Margin="0,0,1,0" Click="tggBttClms_Click"/>
+                    <ToggleButton x:Name="tggBttBPos" Content="bPos" Margin="0,0,1,0" Click="tggBttBPos_Click"/>
+                    <ToggleButton x:Name="tggBttBNeg" Content="bNeg" Margin="0,0,1,0" Click="tggBttBNeg_Click"/>
+                </UniformGrid>
+                <ListBox x:Name="PosListBox" Background="#3FD3D3D3" DockPanel.Dock="Bottom" BorderThickness="0" HorizontalContentAlignment="Stretch" 
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                         ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                         SelectionChanged="PosListBox_SelectionChanged" LostKeyboardFocus="PosListBox_LostKeyboardFocus">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <UniformGrid Height="Auto" Columns="4">
+                                <TextBlock Text="{Binding Path=[0]}" Foreground="Gainsboro" HorizontalAlignment="Right" FontFamily="Consolas" Width="Auto" Margin="0,0,10,0"/>
+                                <TextBlock Text="{Binding Path=[1]}" Foreground="Gainsboro" HorizontalAlignment="Right" FontFamily="Consolas" Width="Auto" Margin="0,0,10,0"/>
+                                <TextBlock Text="{Binding Path=[2]}" Foreground="Gainsboro" HorizontalAlignment="Right" FontFamily="Consolas" Width="Auto" Margin="0,0,10,0"/>
+                                <TextBlock Text="{Binding Path=[3]}" Foreground="Gainsboro" HorizontalAlignment="Right" FontFamily="Consolas" Width="Auto" Margin="0,0,10,0"/>
+                            </UniformGrid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <ListBox.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF176CC8"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="#182130"/>
+                    </ListBox.Resources>
+                </ListBox>
+            </DockPanel>
+            <Canvas x:Name="BoardCanvas" Grid.Column="1" Margin="10" ClipToBounds="True" Background="#00ADADAD"/>
+        </Grid>
+    </DockPanel>
+</Window>

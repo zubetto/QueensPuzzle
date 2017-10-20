@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueensPuzzle", "QueensPuzzle\QueensPuzzle.csproj", "{24A19CD1-29B3-4202-86D2-D26AD95C5CD8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QPSolutionViewer", "QPSolutionViewer\QPSolutionViewer.csproj", "{2B293859-5570-4D85-8AED-EDD4CFC61003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QPSRangeViewer", "QPSRangeViewer\QPSRangeViewer.csproj", "{14458E75-4174-48FA-A298-E205CCA370C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{24A19CD1-29B3-4202-86D2-D26AD95C5CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24A19CD1-29B3-4202-86D2-D26AD95C5CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24A19CD1-29B3-4202-86D2-D26AD95C5CD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B293859-5570-4D85-8AED-EDD4CFC61003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B293859-5570-4D85-8AED-EDD4CFC61003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B293859-5570-4D85-8AED-EDD4CFC61003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B293859-5570-4D85-8AED-EDD4CFC61003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14458E75-4174-48FA-A298-E205CCA370C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14458E75-4174-48FA-A298-E205CCA370C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14458E75-4174-48FA-A298-E205CCA370C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14458E75-4174-48FA-A298-E205CCA370C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
