@@ -11,7 +11,7 @@ The dam stands for a column or row which are not occupied by any queen yet,
 but at the same time queen placed on any cell of that column or row will be under attack. With sequentially filling of at least one coordinate (columns in this case) the dam detection allows eliminate a searching branch in advance (in the pic. below, the next positions (38,21); (38,31); (38,35) are allowed but position (37,40) is rejected as it causes formation of the dam)  
 
 <p align="left">
-  <img src="https://raw.githubusercontent.com/zubetto/QueensPuzzle/master/QPS_DamDetect_L50.jpg" width="850" height="996"/>
+  <img src="https://raw.githubusercontent.com/zubetto/QueensPuzzle/master/QPS_DamDetect_L50.jpg" width="595" height="867"/>
 </p>
 
 ## Solutions Distribution
@@ -21,3 +21,6 @@ In this particular case, subset consists of three queens that occupy the first t
 <p align="left">
   <img src="https://raw.githubusercontent.com/zubetto/QueensPuzzle/master/N-Queens%20SolSpread%20Dom3_overlap-free.jpg" width="1200" height="2633"/>
 </p>
+
+[plot.ly data  8-12](https://plot.ly/create/?fid=Zubetto%3A5)  
+[plot.ly data 13-17](https://plot.ly/create/?fid=Zubetto%3A7)
